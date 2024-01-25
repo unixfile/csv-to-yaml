@@ -12,7 +12,7 @@ read -r # Skip the first line (header)
 while IFS=',' read -r value0 value1 value2 value3 value4; do
     echo "- hostname: $value0"
     echo "  logical_interfaces:"
-    echo "    - iface_name: link_2"
+    echo "    - iface_name: link_1"
     echo "      ip_info:"
     echo "        - $value1"
     echo "        - $value2"
