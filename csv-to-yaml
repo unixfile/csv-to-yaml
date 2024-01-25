@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Check if there is input data from stdin
+if [ -t 0 ]; then
+    echo "Usage: Provide CSV input data via stdin, for example:"
+    echo "       "$0" < input.csv > output.yaml"
+    exit 1
+fi
+
+# Read the CSV data from stdin and process it line by line, skipping the first line
+read -r # Skip the first line (header)
+while IFS=',' read -r value0 value1 value2 value3 value4; do
+    echo "- hostname: $value0"
+    echo "  logical_interfaces:"
+    echo "    - iface_name: link_2"
+    echo "      ip_info:"
+    echo "        - $value1"
+    echo "        - $value2"
+    echo "    - iface_name: link_2"
+    echo "      ip_info:"
+    echo "        - $value3"
+    echo "        - $value4"
+done
